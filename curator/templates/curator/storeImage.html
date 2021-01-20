@@ -1,0 +1,20 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block page %}
+    {{ title }}
+{% endblock %}
+
+{% block page_contents %}
+    <div>
+        <form action="{% url 'storeImage' %}" method="POST">
+            {% csrf_token %}
+            <table>{{form.as_table}}</table>
+            <input type="submit" class="btn btn-primary my-2" value="click">
+        </form>
+    </div>
+{% endblock %} 

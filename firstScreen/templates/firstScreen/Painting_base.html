@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = ja>
+    
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    {% endblock %}
+    <script type="text/javascript" src="{% static '/js/canvas.js' %}"></script>
+</head>
+
+<body>
+    {% block extrahead %}
+        <link href="{% static '/css/painting.css' %}" rel=stylesheet>
+        <link href="{% static '/css/painting.css' %}" rel=stylesheet>
+    {% endblock %}
+
+    <div class="canvas_warp">
+        <canvas class="canvas_picture" id="canvas" width="640" height="480"></canvas> 
+        <canvas class="canvas_element" id="element" width="640" height="480"></canvas>
+    </div>
+    
+    
+    <!-- {% block img %}
+    {% endblock %} -->
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                <div>
+                    <div class='form_set'>
+                    <label>
+                        <strong>{{ field.label }}</strong>: 
+                    </label>
+                    </div>                            
+                    
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <input type="submit", value='送信'></input>
+            </form>
+                
+        </div>
+</body>
+
+</html>

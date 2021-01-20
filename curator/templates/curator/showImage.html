@@ -1,0 +1,29 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block page %}
+    {{ title }}
+{% endblock %}
+
+{% block page_contents %}
+<div>
+    <h3>images</h3>
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>path</th>
+        </tr>
+        {%for item in images%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.path }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{% endblock %}

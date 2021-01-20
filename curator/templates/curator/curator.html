@@ -1,0 +1,21 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block page %}
+    {{ title }}
+{% endblock %}
+
+{% block page_contents %}
+    <div>
+        {%for item in paintings%}
+        <div id="wrap">
+            <img src = "{% static item.painting %}", alt = "{% static item.painting %}", width="600", height="440"><br />
+            <b>{{item.title}}</b>
+        </div>  
+        {%endfor%}
+    </div>
+{% endblock %} 

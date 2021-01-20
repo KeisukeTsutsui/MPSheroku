@@ -1,0 +1,81 @@
+{% extends 'firstScreen/base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block page_contents %}
+
+    {% block extrahead %}
+        <link href="{% static '/css/botton.css' %}" rel="stylesheet">
+    {% endblock %}
+
+    <p1>
+        <h1> MPS </h1>
+    </p1>
+    <p2>
+        <h4>
+        -click the pin!-
+        </h4>
+    </p2>
+    
+    <div class='back-botton'>
+        <div class='h1'>
+            <img src="{% static '0_Nisshinkan.png' %}" alt="Nisshinkan" width="1400" height="480" usemap="#image-map">
+        </div>
+        <map name="image-map">
+            <area alt="manners" target="_brank" title="manners" href="{ % url 'manner' % }" coords="0,1403,0,500" shape="rect">
+        </map>
+        <div class='h2'>
+            <!--
+                <input type="button" name="botton1" value="マナー" style="width: 100%"></button>
+            -->
+            <a href="{% url 'manner' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h3'>
+            <a href="{% url 'reading' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h4'>
+            <a href="{% url 'archery' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h5'>
+            <a href="{% url 'iai' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h6'>
+            <a href="{% url 'jujutsu' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h7'>
+            <a href="{% url 'sojutsu' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h8'>
+            <a href="{% url 'riding' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+        <div class='h9'>
+            <a href="{% url 'artillery' %}" style="width: 100%">
+                <img src="{% static '/CreatePainting/pin.png' %}" width="40", height="40">
+            </a>
+        </div>
+
+    </div>
+
+    <div>
+        <h4>
+            Enter your code<input type="text">
+        </h4>
+    </div>
+{% endblock %}

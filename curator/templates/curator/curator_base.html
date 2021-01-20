@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <title>{% block title %}{%endblock%}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <script src="{% static 'js/openclose.js' %}"></script> -->
+        <!-- <script src="{% static 'js/fixmenu.js' %}"></script>
+        <script src="{% static 'js/fixmenu_pagetop.js' %}"></script>
+        <script src="{% static 'js/ddmenu_min.js' %}"></script> -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'db/css/style.css' %}"/> -->
+        <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <header>
+            <div class="inner">
+                <h1 id="logo"><a href="{% url 'curator' %}"><img src="{% static 'base/logo.png' %}" alt="curator"></a></h1>
+            </div>
+            <nav id="menubar" class="nav-fix-pos">
+                <ul class="inner">
+                <li><a href="{% url 'curator' %}">ホーム</a></li>
+                <li><a href="{% url 'showTable' %}" class="cursor-default">Show table</a>
+                    <ul class="ddmenu">
+                        <li><a href="{% url 'showUser' %}">Users</a></li>
+                        <li><a href="{% url 'showImage' %}">Images</a></li>
+                        <li><a href="{% url 'showPainting' %}">Paintings</a></li>
+                    </ul>
+                </li>
+                <li><a href="editTable" class="cursor-default">Edit table</a>
+                    <ul class="ddmenu">
+                        <li><a href="{% url 'editUser' %}">Users</a></li>
+                        <li><a href="{% url 'editImage' %}">Images</a></li>
+                        <li><a href="{% url 'editPainting' %}">Paintings</a></li>
+                    </ul>
+                </li>
+                    <li><a href="{% url 'searchView' %}">Search Paintings</a></li>
+                    <li><a href="{% url 'storeImage' %}">Store Image</a></li>
+                </ul>
+            </nav>
+        </header>
+        <br /><br /><br /><br />
+        
+        {% block page_contents %}
+        {% endblock %}
+    </body>
+</html> 

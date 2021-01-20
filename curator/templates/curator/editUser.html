@@ -1,0 +1,32 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block page %}
+    {{ title }}
+{% endblock %}
+
+{% block page_contents %}
+<div id="box">
+    <h3>users</h3>
+    <div id="left">
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th></th>
+            </tr>
+            {%for item in users%}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td><button>delete</button></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+{% endblock %}

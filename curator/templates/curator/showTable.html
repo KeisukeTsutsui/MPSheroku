@@ -1,0 +1,65 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block page %}
+    {{ title }}
+{% endblock %}
+
+{% block page_contents %}
+<div>
+    <h3>users<a href="{% url 'showUser' %}">click</a></h3>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+        {%for item in users%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+<div>
+    <h3>images<a href="{% url 'showImage' %}">click</a></h3>
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>path</th>
+        </tr>
+        {%for item in images%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.path }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+<div>
+    <h3>paintings<a href="{% url 'showPainting' %}">click</a></h3>
+    <table border="4">
+        <tr>
+            <th>id</th>
+            <th>user_id</th>
+            <th>title</th>
+            <th>path</th>
+            <th>date</th>
+        </tr>
+        {%for item in paintings%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.user_id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.path }}</td>
+            <td>{{ item.date }}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{% endblock %}

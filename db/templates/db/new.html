@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{{title}}{% endblock %}</title>
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'db/css/style.css' %}"/> -->
+        <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"/>
+    </head>
+    <body>
+        {% block content %}
+        <h1>{{title}}</h1>
+        <form action="{% url 'user' %}" method="post">
+            {% csrf_token %}
+            <table>{{form.as_table}}</table>
+            <input type="submit" class="btn btn-primary my-2" value="click">
+        </form>
+        {% endblock %}
+    </body>
+</html>

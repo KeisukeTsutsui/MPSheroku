@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = ja>
+    
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="{% static '/js/canvas.js' %}"></script>
+    <link href="{% static '/css/edit_picture.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <canvas class=canvas_warp id="canvas" width="640" height="480">
+        <canvas class=canvas_element id="element" width="50" height="50"></canvas>
+    </canvas> 
+    <a href="{% url 'iai' %}" style="width: 100%">
+        <img src = "{% static '4_archery.png' %}", alt = archery, width="600", height="440">
+    </a>
+</body>
+    

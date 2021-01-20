@@ -1,0 +1,43 @@
+{% extends 'curator/curator_base.html' %}
+{% load static %}
+
+
+
+{% block page_contents %}
+
+<div id="box">
+    <div id="left">
+        <h1>検索条件</h1>
+        <form action="" method="get">
+            <label>id :</label>
+            <input name="query" value="{{ request.GET.query }}" type="text">
+            <button type="submit">検索</button>
+        </form>
+    </div>
+    <div id="right">
+        <h1>検索結果</h1>
+        <section>
+            {% if object_list|length == 0 %}
+                <p>検索結果が存在しません。</p>
+            {% else %}
+                <table border="2">
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>date</th>
+                    </tr>
+                    <tbody>
+                    {% for post in object_list %}
+                        <tr>
+                            <td width="35%">{{ post.user_id }}</td>
+                            <td width="35%">{{ post.title }}</td>
+                            <td width="35%">{{ post.date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </section>
+    </div>
+</div>
+{% endblock %} 
