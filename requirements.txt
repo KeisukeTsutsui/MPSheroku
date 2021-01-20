@@ -10,3 +10,4 @@ django-bootstrap4==2.3.1
 dj-database-url==0.5.0
 Pillow
 opencv-contrib-python
+django-storages
