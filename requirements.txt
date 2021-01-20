@@ -8,4 +8,6 @@ opencv-python==4.4.0.46
 mysqlclient==2.0.2
 django-bootstrap4==2.3.1
 dj-database-url==0.5.0
-pillow
+Pillow
+opencv-contrib-python
+libgl1-mesa-dev
